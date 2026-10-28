@@ -1,0 +1,22 @@
+# Optional machine-specific configuration; the default YAML is tracked.
+supermimic_acceptance.local.yaml
+
+# This script creates an isolated cache below its own directory
+.supermimic_cache/
+.supermimic_tools/
+
+# Possible local artifacts if someone chooses in-repo paths
+acceptance_results/
+supermimic_envs/
+data/
+cache/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local secrets and outputs
+.env
+.env.*
+*.log
