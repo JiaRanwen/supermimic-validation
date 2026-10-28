@@ -1,0 +1,62 @@
+paths:
+  venv: null
+
+data:
+  lafan1: data/lafan1_g1_40
+  bones_seed: null
+
+install:
+  mode: fresh
+  use_mirror: true
+  no_root: true
+  cache: shared
+  cache_dir: null
+  bootstrap_uv: false
+  min_free_gb: 30
+
+scheduler:
+  mode: local
+  cpu_stages: local
+
+smoke:
+  num_clips: 40
+
+evaluation:
+  g2_trials: 2
+
+profiling:
+  num_envs: [128, 512]
+  steps: 10
+  warmup: 5
+  update_iters: 1
+
+multi_gpu:
+  enabled: true
+  total_updates: 8
+  fault_timeout_minutes: 10
+
+learning_signal:
+  enabled: true
+  config: supermimic_lafan1
+  gpus: 2
+  updates: 12
+  val_interval: 6
+  seed: 0
+  variants:
+    baseline:
+      - env.num_envs=64
+      - env.replay_length=200
+      - algorithm.wm_window_batch=256
+      - algorithm.imagine_batch=256
+
+paper_scale:
+  enabled: false
+
+multinode:
+  enabled: false
+
+long_training:
+  enabled: false
+
+bones:
+  enabled: false

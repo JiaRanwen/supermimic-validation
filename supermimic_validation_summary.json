@@ -1,0 +1,54 @@
+{
+  "run_id": "20261028_021254_a7dbdd95_5f69",
+  "validated_commit": "a7dbdd95e1c2a6ce7d7b3fa4951f3beff509558c",
+  "hardware": "2 x NVIDIA A800 80GB",
+  "stage_status": {
+    "01": "PASS",
+    "02": "PASS",
+    "03": "PASS",
+    "04": "PASS",
+    "05": "PASS",
+    "06": "PASS",
+    "07": "PASS",
+    "08": "PASS",
+    "09": "PASS",
+    "12": "PASS"
+  },
+  "profiling_settings": {
+    "num_envs": [
+      128,
+      512
+    ],
+    "steps": 10,
+    "warmup": 5,
+    "update_iters": 1
+  },
+  "learning_settings": {
+    "enabled": true,
+    "config": "supermimic_lafan1",
+    "gpus": 2,
+    "updates": 12,
+    "val_interval": 6,
+    "seed": 0,
+    "variants": {
+      "baseline": [
+        "env.num_envs=64",
+        "env.replay_length=200",
+        "algorithm.wm_window_batch=256",
+        "algorithm.imagine_batch=256"
+      ]
+    }
+  },
+  "learning_observation": {
+    "normalized_return_initial": 0.001892,
+    "normalized_return_final": 0.001893,
+    "fail_rate_initial": 1.0,
+    "fail_rate_final": 1.0
+  },
+  "conclusions": {
+    "engineering": "passed",
+    "short_run_numerics": "passed",
+    "policy_improvement": "not established",
+    "paper_reproduction": "not attempted"
+  }
+}
